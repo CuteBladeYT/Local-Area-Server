@@ -8,14 +8,19 @@
 
         <!-- Import scripts -->
         <script src="./script/main.js" type="module"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./style/collapsible.css">
     </head>
 
     <body>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                document.querySelector("span#io").innerText = io();
-            })
-        </script>
-        <span id="io"></span>
+        <h1>Settings</h1>
+
+        <br>
+
+        <button id="lass_appearance" class="collapsible_btn" name="coll_appearance">Appearance</button>
+        <div name="coll_appearance" class="collapsible_content">
+            <span>Appearance settings</span>
+        </div>
     </body>
 </html>
