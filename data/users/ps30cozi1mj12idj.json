@@ -1,0 +1,26 @@
+{
+    "name": "server",
+    "displayName": "Server",
+    "id": "ps30cozi1mj12idj",
+    "cred": {
+        "pass": "d77753f7bbe55e6f0bdb2630ef45341a444ed08d3bedc70a27fdbc4c842ff577"
+    },
+    "image": "fs/system/icons/user.png",
+    "config": {
+        "desktop": {
+            "wallpaper": "fs/system/images/wallpaper.png",
+            "taskbar": {
+                "position": "bottom",
+                "height": 52,
+                "programs": [],
+                "tray": {
+                    "width": 256
+                }
+            },
+            "colors": {
+                "theme": "dark",
+                "accent": "#03fc03"
+            }
+        }
+    }
+}

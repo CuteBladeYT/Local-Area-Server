@@ -1,0 +1,57 @@
+/* DARK DESKTOP THEME */
+
+/* Taskbar */
+.dark div#app_desktop > div#taskbar {
+    background: rgb(27,27,27);
+    border-bottom-color: white;
+    color: white;
+}
+/* Meta button */
+.dark div#app_desktop > div#taskbar > button#meta {
+    background: transparent;
+    color: white;
+}
+.dark div#app_desktop > div#taskbar > button#meta:hover {
+    background: rgba(255,255,255,.3);
+}
+
+/* Tray */
+.dark div#app_desktop > div#taskbar > div#tray > div#clock > span:nth-child(2) {
+    color: lightgray;
+}
+.dark div#app_desktop > div#taskbar > div#tray > div#notif:hover {
+    background: rgba(255,255,255,.3);
+}
+.dark div#app_desktop > div#taskbar > div#tray > div#notif > img {
+    filter: invert(0);
+}
+
+
+/* Program Launcher */
+.dark div#program_launcher > div#programs > button {
+    background: rgb(50,50,50);
+    color: white;
+}
+.dark div#program_launcher > div#programs > button:hover {
+    background: rgb(90,90,90);
+    /* color: black; */
+    /* mix-blend-mode: difference; */
+}
+
+.dark div#program_launcher > div#panel {
+    background: rgb(27,27,27);
+}
+.dark div#program_launcher > div#panel > div#profile > img {
+    background: rgb(20,20,20);
+}
+.dark div#program_launcher > div#panel > div#profile > span {
+    color: white;
+}
+.dark div#program_launcher > div#panel > div#quick_access > button,
+.dark div#program_launcher > div#panel > div#actions > button {
+    color: white;
+}
+.dark div#program_launcher > div#panel > div#quick_access > button:hover,
+.dark div#program_launcher > div#panel > div#actions > button:hover {
+    background: rgba(255,255,255,.3);
+}

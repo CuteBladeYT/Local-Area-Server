@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Local Area Server Dashboard</title>
+        <script src="/socket.io/socket.io.js"></script>
+
+        <!-- LOAD ICON -->
+        <link rel="icon" href="fs/system/icon/icon192.png">
+
+        <!-- SOCKET IO -->
+        <script>const socket = io();</script>
+
+        <!-- LOAD WINBOX CSS -->
+        <link rel="stylesheet" href="winbox/css/winbox.css">
+        <!-- <link rel="stylesheet" href="winbox/css/themes/modern.min.css"> -->
+        <link rel="stylesheet" href="winbox/css/themes/las.css">
+
+        <!-- <script src="../../winbox/winbox.js"></script> -->
+
+        <!-- Desktop -->
+        <link rel="stylesheet" href="dashboard/css/style.css">
+        <link rel="stylesheet" href="dashboard/css/dark.css">
+
+        <script src="dashboard/script.mjs" type="module"></script>
+        <script src="dashboard/script/contextmenu.js" type="module"></script>
+    </head>
+
+    <body class="" oncontextmenu="return false;">
+        <div id="app_desktop">
+            <img id="wallpaper" 
+                src="fs/system/images/wallpaper.png" 
+                draggable="false"
+                style="top: 0;height:100%;">
+
+            <div id="taskbar" style="display: none">
+                <button id="meta"><img src="fs/system/icon/icon192.png" draggable="false"></button>
+                <div id="programs"></div>
+                <div id="tray">
+                    <div id="tray_resize"></div>
+                    <div id="clock">
+                        <span>01:00.00</span>
+                        <span>01.01.1970</span>
+                    </div>
+                    <div id="notif"><img src="fs/system/icons/notification.png" draggable="false"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="app_windowmanager"></div>
+
+        <div id="program_launcher">
+            <div id="programs">
+                <!-- <button>
+                    <img src="fs/system/icons/app.png">
+                    <span>Program</span>
+                </button> -->
+            </div>
+
+            <div id="panel">
+                <div id="profile">
+                    <img src="fs/system/icons/user.png" draggable="false">
+                    <span>User</span>
+                </div>
+                <div id="quick_access">
+                    <button>Documents</button>
+                    <button>Desktop</button>
+                    <button>Downloads</button>
+                    <button>Pictures</button>
+                    <button>Music</button>
+                </div>
+                <div id="actions">
+                    <button id="settings">Settings</button>
+                    <br><br>
+                    <button id="quit">Shutdown</button>
+                    <button id="restart">Restart</button>
+                    <br><br>
+                    <button id="stop_server" style="color: red;">Stop server</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

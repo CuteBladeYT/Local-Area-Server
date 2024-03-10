@@ -1,0 +1,379 @@
+/* Import fonts */
+@font-face {
+    font-family: main;
+    src: url(../../fs/system/roboto.ttf);
+}
+@font-face {
+    font-family: mono;
+    src: url(../../fs/system/firacode.ttf);
+}
+
+/* Variables */
+:root {
+    --accent: #03fc03
+}
+
+/* Apply style for ALL elements */
+* {
+    font-family: main;
+    user-select: none;
+}
+
+/* Body */
+body {
+    font-size: medium;
+    overflow: hidden auto;
+    padding: 0;
+    margin: 0;
+
+    width: 100vw;
+    height: 100vh;
+    /* user-select: none; */
+}
+
+/* Text sizes */    
+.textMedium {font-size: medium!important}
+.textLarge {font-size: large!important}
+
+.winbox.min {
+    display: none;
+}
+
+/* =================== */
+/* Desktop Environment */
+div#app_desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Wallpaper */
+div#app_desktop > img#wallpaper {
+    position: absolute;
+    top: 53px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Taskbar */
+div#app_desktop > div#taskbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    background: white;
+    border-bottom: 1px grey solid;
+    color: black;
+}
+/* Meta button */
+div#app_desktop > div#taskbar > button#meta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 52px;
+    background: transparent;
+    color: black;
+    border: none;
+    will-change: background;
+    transition: 200ms ease-in-out;
+}
+/* Meta icon */
+div#app_desktop > div#taskbar > button#meta > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+/* Meta button hover */
+div#app_desktop > div#taskbar > button#meta:hover {
+    background: grey;
+}
+/* Programs */
+div#app_desktop > div#taskbar > div#programs {
+    position: absolute;
+    top: 0;
+    left: 52px;
+    width: calc(100% - 256px - 52px);
+    height: 100%;
+    overflow: hidden auto;
+    contain: content;
+}
+div#app_desktop > div#taskbar > div#programs::-webkit-scrollbar {
+    display: none;
+}
+/* List */
+div#app_desktop > div#taskbar > div#programs > button {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 52px;
+    height: 52px;
+    background: rgba(0,0,0,0.1);
+    border: none;
+    border-bottom: 3px transparent solid;
+    will-change: background, border;
+    transition: 50ms ease-in-out;
+    contain: content;
+}
+div#app_desktop > div#taskbar > div#programs > button:hover {
+    background: rgba(0,0,0,0.3);
+    border-bottom-color: var(--accent);
+}
+div#app_desktop > div#taskbar > div#programs > button > img {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    object-fit: contain;
+    pointer-events: none;
+}
+/* Button states */
+div#app_desktop > div#taskbar > div#programs > button.open {
+    border-bottom-color: grey;
+}
+div#app_desktop > div#taskbar > div#programs > button.focus {
+    border-bottom-color: var(--accent);
+}
+/* Tray */
+div#app_desktop > div#taskbar > div#tray {
+    position: absolute;
+    top: 0;
+    /* left: calc(52px + (100% - 256px - 52px)); */
+    right: 0;
+    width: 256px;
+    height: 100%;
+    border-left: 1px grey solid;
+}
+div#app_desktop > div#taskbar > div#tray > div#tray_resize {
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 6px;
+    height: 100%;
+    cursor: e-resize;
+    z-index: 10;
+    -webkit-user-drag: element;
+}
+div#app_desktop > div#taskbar > div#tray > div#clock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 52px);
+    height: 100%;
+}
+div#app_desktop > div#taskbar > div#tray > div#clock > span {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    text-align: center;
+    /* vertical-align: middle; */
+    justify-content: center;
+    align-items: center;
+}
+div#app_desktop > div#taskbar > div#tray > div#clock > span:nth-child(2) {
+    top: 50%;
+    color: black;
+}
+div#app_desktop > div#taskbar > div#tray > div#notif {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 52px;
+    height: 100%;
+    will-change: background;
+    transition: 50ms ease-in-out;
+}
+div#app_desktop > div#taskbar > div#tray > div#notif:hover {
+    background: lightgray;
+}
+div#app_desktop > div#taskbar > div#tray > div#notif > img {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    object-fit: contain;
+    pointer-events: none;
+    filter: invert(1);
+}
+
+/* ============== */
+/* Window Manager */
+div#app_windowmanager {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+div#app_windowmanager > * {
+    pointer-events: auto;
+}
+
+/* Program launcher */
+div#program_launcher {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden hidden;
+}
+div#program_launcher > div#programs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    overflow: hidden scroll;
+    contain: content;
+}
+div#program_launcher > div#programs > button {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    margin-top: 4px;
+    width: 100%;
+    height: 48px;
+    border: none;
+    background: lightgrey;
+    font-size: large;
+}
+div#program_launcher > div#programs > button:hover {
+    background: grey;
+    color: white;
+}
+div#program_launcher > div#programs > button > img {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+
+div#program_launcher > div#panel {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 40%;
+    height: 100%;
+    overflow: hidden auto;
+    contain: content;
+    background: lightgrey;
+}
+div#program_launcher > div#panel > div {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden hidden;
+}
+div#program_launcher > div#panel > div#profile {
+    height: 80px;
+}
+div#program_launcher > div#panel > div#profile > img {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 64px;
+    height: calc(100% - 16px);
+    padding: 4px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: grey;
+}
+div#program_launcher > div#panel > div#profile > span {
+    position: absolute;
+    top: 8px;
+    left: 88px;
+    width: calc(100% - 96px);
+    height: calc(100% - 16px);
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    color: black;
+}
+
+div#program_launcher > div#panel > div#quick_access > button,
+div#program_launcher > div#panel > div#actions > button {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    margin-top: 4px;
+    width: 100%;
+    min-height: 32px;
+    border: none;
+    background: transparent;
+    font-size: large;
+    text-align: left;
+}
+div#program_launcher > div#panel > div#quick_access > button:not(:first-child),
+div#program_launcher > div#panel > div#actions > button:not(:first-child) {
+    margin-top: 0;
+}
+div#program_launcher > div#panel > div#quick_access > button:hover,
+div#program_launcher > div#panel > div#actions > button:hover {
+    background: grey;
+    color: white;
+}
+
+div#program_launcher > div#panel > div#actions {
+    border-top: 1px darkgrey solid;
+    margin-top: 8px;
+}
+
+/* CONTEXT MENU */
+div#las_context_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    min-width: 192px;
+    max-width: 386px;
+    max-height: 80vh;
+    contain: content;
+    overflow: hidden auto;
+
+    background-color: white;
+    border: 1px darkgrey solid;
+    padding: 0;
+    z-index: 4;
+}
+div#las_context_menu > button {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    margin-bottom: 4px;
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+div#las_context_menu > button:hover {
+    background-color: rgba(255,255,255,.4);
+}

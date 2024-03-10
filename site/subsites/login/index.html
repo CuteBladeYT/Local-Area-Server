@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Local Area Server Login</title>
+        <script src="/socket.io/socket.io.js"></script>
+
+        <!-- LOAD ICON -->
+        <link rel="icon" href="../../fs/system/icon/icon192.png">
+
+        <!-- SOCKET IO -->
+        <script>const socket = io();</script>
+
+        <!-- STYLESHEET -->
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body oncontextmenu="return false;">
+        <div class="center">
+            <table id="form">
+                <tr>
+                    <th>Username / ID</th>
+                    <th>Password</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="in_username" type="text" name="las_username" maxlength="24">
+                    </td>
+                    <td>
+                        <input id="in_password" type="password" maxlength="26">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="btn_login">Login</button>
+                    </td>
+                    <td>
+                        <button id="btn_register">Register</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

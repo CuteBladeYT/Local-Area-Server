@@ -1,0 +1,26 @@
+{
+  "name": "LAS",
+  "version": "0.0.1",
+  "description": "Local Area Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "las",
+    "local area server",
+    "local",
+    "local area",
+    "server"
+  ],
+  "author": "UnitedCatdom",
+  "license": "DSMS-v1.2",
+  "dependencies": {
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "http": "0.0.1-security",
+    "sha256": "^0.2.0",
+    "socket.io": "^4.5.0"
+  }
+}

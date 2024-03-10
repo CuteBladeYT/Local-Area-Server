@@ -1,0 +1,106 @@
+:root {
+    --lasWindowStyleAccent: #008f00;
+    --lasWindowStyleFrameColor: rgb(255,255,255);
+    --lasWindowStyleFrameColorDark: rgb(10,10,10);
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0.8) translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes minimize {
+    0% {
+        transform: scale(1) translateY(0%);
+        opacity: 1;
+        display: unset;
+    }
+    to {
+        transform: scale(0.8) translateY(100%);
+        opacity: 0;
+        display: none;
+    }
+}
+
+.winbox.lasWindowStyle {
+    background: var(--lasWindowStyleFrameColor);
+    /* border-radius: 8px 8px 0 0; */
+    animation: popup 0.3s cubic-bezier(0.3, 1, 0.3, 1) forwards;
+}
+.winbox.lasWindowStyle:not(.min, .focus) {
+    background: #666;
+}
+.winbox.lasWindowStyle.focus {
+    background: var(--lasWindowStyleAccent);
+}
+@media (hover: hover) {
+    .winbox.lasWindowStyle.min:not(:hover) {
+        background: #666;
+    }
+    .winbox.lasWindowStyle .wb-control * {
+        opacity: 0.65;
+    }
+    .winbox.lasWindowStyle .wb-control :hover {
+        opacity: 1;
+    }
+}
+@media (hover: none) {
+    .winbox.lasWindowStyle.min {
+        background: #666;
+    }
+}
+.winbox.lasWindowStyle.max {
+    border-radius: 0;
+    max-height: --winbox-max-height;
+}
+.winbox.lasWindowStyle .wb-title {
+    font-size: large;
+    font-weight: 600;
+}
+.winbox.lasWindowStyle .wb-title::after {
+    mix-blend-mode: difference;
+}
+.winbox.lasWindowStyle .wb-body {
+    margin: 4px;
+    color: black;
+    background: white;
+    /* color: #fff; */
+    /* background: #131820; */
+}
+.winbox.lasWindowStyle .wb-body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.winbox.lasWindowStyle .wb-body::-webkit-scrollbar-track {
+    background: 0 0;
+}
+.winbox.lasWindowStyle .wb-body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #263040;
+}
+.winbox.lasWindowStyle .wb-body::-webkit-scrollbar-thumb:window-inactive {
+    background: #181f2a;
+}
+.winbox.lasWindowStyle .wb-body::-webkit-scrollbar-corner {
+    background: 0 0;
+}
+
+
+.winbox.lasWindowStyle.min {
+    animation: minimize 0.3s cubic-bezier(0.3, 1, 0.3, 1) forwards;
+}
+
+/* DARK MODE */
+.dark .winbox.lasWindowStyle {
+    background: var(--lasWindowStyleFrameColorDark);
+}
+.dark .winbox.lasWindowStyle .wb-body {
+    color: white;
+    background: rgb(27,27,27);
+}

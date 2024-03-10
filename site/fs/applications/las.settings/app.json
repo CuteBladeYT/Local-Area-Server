@@ -1,0 +1,11 @@
+{
+    "meta": {
+        "name": "Settings",
+        "id": "las.settings",
+        "version": "0.1.1"
+    },
+    "application": {
+        "executable": "index.html",
+        "icon": "icon.png"
+    }
+}
