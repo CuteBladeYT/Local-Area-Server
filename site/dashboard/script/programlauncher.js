@@ -16,7 +16,7 @@ export var launcher = new WinBox(
         icon: "fs/system/icons/app2.png",
         mount: document.body.querySelector("div#program_launcher"),
         class: "lasWindowStyle",
-        id: "program_launcher"
+        id: "program_launcher",
     }
 )
 
@@ -52,8 +52,8 @@ export function _init()
 
 export function showLauncher()
 {
-    launcher.move("20%", "10%");
-    launcher.resize("60%", "80%");
+    launcher.move("0", "10%");
+    launcher.resize("60%", "90%");
     launcher.restore();
     launcher.show();
     launcher.focus();

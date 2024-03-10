@@ -1119,7 +1119,7 @@ WinBox.prototype.maximize = function(state){
         this.addClass("max").resize(
 
             root_w - this.left - this.right,
-            root_h - this.top - this.bottom /* - 1 */,
+            /*root_h - this.top - this.bottom -*/ this.maxheight /* - 1 */,
             true
 
         ).move(

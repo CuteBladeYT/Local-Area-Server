@@ -11,6 +11,11 @@
     </head>
 
     <body>
-        
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector("span#io").innerText = io();
+            })
+        </script>
+        <span id="io"></span>
     </body>
 </html>

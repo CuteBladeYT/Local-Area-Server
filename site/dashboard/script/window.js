@@ -24,10 +24,9 @@ export function createWindow(params = {})
 
     win.maxheight = WinBoxMaxHeight;
 
-    // win.window.buttons.maximize = () => {
-    //     win.maximize(!win.max);
-    //     win.resize(root.SCREEN_SIZE.x, WinBoxMaxHeight);
-    // };
+    win.move("center", "center");
+
+    win.removeControl("wb-full");
 
     return win
 }

@@ -1,17 +1,23 @@
 import * as room from "../script.mjs";
 
 // Create the menu element
-let menu = document.createElement("div");
+let menu = document.body.querySelector("div#las_context_menu");
 document.addEventListener("DOMContentLoaded", () => {
-    menu.id = "las_context_menu";
-    document.body.appendChild(menu);
-
+    menu = document.body.querySelector("div#las_context_menu");
     document.body.addEventListener("click", (e) => {
-        if (e.target != menu) {
-            // menu.style.display = "none";
-        };
+        if (
+            e.pageX > menu.clientLeft + menu.clientWidth + 15 || 
+            e.pageX < menu.clientLeft - 15 || 
+            e.pageY > menu.clientTop + menu.clientHeight + 15 || 
+            e.pageY < menu.clientTop - 15) {
+                menu.style.display = "none";
+        }
     });
 });
+
+export function hideCtx() {
+    menu.style.display = "none";
+}
 
 
 export function createCtx(position = {x: 0, y: 0}, buttons = []) {
@@ -22,7 +28,10 @@ export function createCtx(position = {x: 0, y: 0}, buttons = []) {
     buttons.forEach(dat => {
         let btn = document.createElement("button");
         btn.innerText = dat.label;
-        btn.onclick = dat.onclick;
+        btn.onclick = () => {
+            dat.onclick();
+            hideCtx();
+        };
         menu.appendChild(btn);
     });
 

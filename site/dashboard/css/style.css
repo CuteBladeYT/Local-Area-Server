@@ -258,6 +258,7 @@ div#program_launcher > div#programs > button {
     border: none;
     background: lightgrey;
     font-size: large;
+    cursor: pointer;
 }
 div#program_launcher > div#programs > button:hover {
     background: grey;
@@ -329,6 +330,7 @@ div#program_launcher > div#panel > div#actions > button {
     background: transparent;
     font-size: large;
     text-align: left;
+    cursor: pointer;
 }
 div#program_launcher > div#panel > div#quick_access > button:not(:first-child),
 div#program_launcher > div#panel > div#actions > button:not(:first-child) {
@@ -360,7 +362,7 @@ div#las_context_menu {
     background-color: white;
     border: 1px darkgrey solid;
     padding: 0;
-    z-index: 4;
+    z-index: 54328794;
 }
 div#las_context_menu > button {
     position: relative;
